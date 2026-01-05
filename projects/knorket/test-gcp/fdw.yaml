@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: 0899cebb-7306-fc937870-7b3e-4ad2e7be-38ba
+  name: 0899cebb-7306-fc937870-7b3e-5ad0e583-2560
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -14,7 +14,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: 0899cebb-7306-fc937870-7b3e-4ad2e7be-38ba
+    namespace: 0899cebb-7306-fc937870-7b3e-5ad0e583-2560
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io
