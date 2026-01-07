@@ -1,0 +1,29 @@
+backups:
+  enabled: true
+  endpointURL: https://storage.googleapis.com/
+  provider: s3
+  retentionPolicy: 30d
+  s3:
+    bucket: knbcreg
+    path: /backups/knorket/saaslake/0899cebb-7306-fc937870-7b3e-b292a7b9-a50f/v1
+  scheduledBackups:
+  - name: backup
+    schedule: 0 */5 * * * *
+  secret:
+    create: false
+    name: cnpg-backup-creds
+cluster:
+  enableSuperuserAccess: true
+  imageName: nce26ltz.c1.bhs5.container-registry.ovh.net/cnpg_basic/fdw:15
+  imagePullSecrets:
+  - name: registry-credentials
+  initdb:
+    database: postgres
+    owner: postgres
+    secret:
+      name: postgres-admin
+  instances: 1
+  storage:
+    size: 10Gi
+  superuserSecret: postgres-admin
+mode: standalone
